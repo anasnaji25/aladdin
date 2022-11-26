@@ -1,8 +1,10 @@
 import 'package:aladdin/src/constants/app_colors.dart';
 import 'package:aladdin/src/constants/app_font.dart';
 import 'package:aladdin/src/constants/helpers.dart';
+import 'package:aladdin/src/controllers/register_controller.dart';
 import 'package:aladdin/src/views/auth_views/login_view.dart';
 import 'package:aladdin/src/views/auth_views/register_view.dart';
+import 'package:aladdin/src/widgets/welcome_screen_widgets/select_language_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -108,21 +110,26 @@ class _WelcomeScreenViewState extends State<WelcomeScreenView> {
                   color: Colors.white.withOpacity(0.6), fontSize: 11),
             ),
             w5,
-            Container(
-              height: 30,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: const Color(0xff404040).withOpacity(0.3)),
-              alignment: Alignment.center,
-              child: Padding(
-                padding: const EdgeInsets.only(right: 15, left: 15),
-                child: Text(
-                  "English",
-                  style: primaryFont.copyWith(
-                      color: Colors.white.withOpacity(0.9), fontSize: 13),
-                ),
-              ),
-            )
+            Obx(() => InkWell(
+                  onTap: () {
+                    modalBottomSheetSelectLanguage(size, context);
+                  },
+                  child: Container(
+                    height: 30,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: const Color(0xff404040).withOpacity(0.3)),
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 15, left: 15),
+                      child: Text(
+                        Get.find<RegisterController>().selectedLanguage.value,
+                        style: primaryFont.copyWith(
+                            color: Colors.white.withOpacity(0.9), fontSize: 13),
+                      ),
+                    ),
+                  ),
+                ))
           ],
         ),
       ),

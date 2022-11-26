@@ -1,6 +1,7 @@
 import 'package:aladdin/src/constants/app_colors.dart';
 import 'package:aladdin/src/constants/app_font.dart';
 import 'package:aladdin/src/constants/helpers.dart';
+import 'package:aladdin/src/views/auth_views/enter_otp_forgot_screen_view.dart';
 import 'package:aladdin/src/views/auth_views/register_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -58,29 +59,32 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                 child: const Padding(
                   padding: EdgeInsets.only(left: 10, right: 10),
                   child: TextField(
-                    decoration: InputDecoration.collapsed(
-                        hintText: "Email address"),
+                    decoration:
+                        InputDecoration.collapsed(hintText: "Email address"),
                   ),
                 ),
               ),
             ),
             h30,
-           
-            
             Padding(
               padding: const EdgeInsets.only(left: 30, right: 30),
-              child: Container(
-                height: 50,
-                width: size.width,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: secondaryColor),
-                    color: secondaryColor),
-                alignment: Alignment.center,
-                child: Text(
-                  "Send",
-                  style:
-                      primaryFont.copyWith(color: Colors.white, fontSize: 17),
+              child: InkWell(
+                onTap: () {
+                  Get.to(() => EnterOtpForgotPassView());
+                },
+                child: Container(
+                  height: 50,
+                  width: size.width,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: secondaryColor),
+                      color: secondaryColor),
+                  alignment: Alignment.center,
+                  child: Text(
+                    "Send",
+                    style:
+                        primaryFont.copyWith(color: Colors.white, fontSize: 17),
+                  ),
                 ),
               ),
             ),
@@ -90,14 +94,11 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                 
-                  
                   Text(
                     "Or",
                     style: primaryFont.copyWith(
                         color: Colors.white.withOpacity(0.9), fontSize: 15),
                   ),
-                 
                 ],
               ),
             ),
@@ -114,28 +115,31 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
               ),
             ),
             h100,
-             Text(
+            Text(
               "Didn't have an account?",
-              style: primaryFont.copyWith(color: Colors.white.withOpacity(0.8), fontSize: 14),
+              style: primaryFont.copyWith(
+                  color: Colors.white.withOpacity(0.8), fontSize: 14),
             ),
             h30,
             Padding(
-              padding: const EdgeInsets.only(left: 35,right: 35),
+              padding: const EdgeInsets.only(left: 35, right: 35),
               child: Container(
                 height: 50,
                 width: size.width,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(7),
-                  border: Border.all(color: Colors.white)
-                ),
+                    borderRadius: BorderRadius.circular(7),
+                    border: Border.all(color: Colors.white)),
                 alignment: Alignment.center,
-                child: Text("Sign Up?",style: primaryFont.copyWith(color: Colors.white,fontSize: 17),),
+                child: Text(
+                  "Sign Up?",
+                  style:
+                      primaryFont.copyWith(color: Colors.white, fontSize: 17),
+                ),
               ),
             )
           ],
         ),
       ),
-    
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:aladdin/src/constants/app_font.dart';
 import 'package:aladdin/src/constants/helpers.dart';
 import 'package:aladdin/src/views/auth_views/forgot_password_views.dart';
 import 'package:aladdin/src/views/auth_views/register_view.dart';
+import 'package:aladdin/src/views/home_views/home_bottom_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -109,13 +110,13 @@ class _LoginViewState extends State<LoginView> {
                     ],
                   ),
                   InkWell(
-                    onTap: (){
-                      Get.to(()=> ForgotPasswordView());
+                    onTap: () {
+                      Get.to(() => ForgotPasswordView());
                     },
                     child: Text(
                       "Forgot Password",
-                      style:
-                          primaryFont.copyWith(color: Colors.white, fontSize: 11),
+                      style: primaryFont.copyWith(
+                          color: Colors.white, fontSize: 11),
                     ),
                   )
                 ],
@@ -124,18 +125,23 @@ class _LoginViewState extends State<LoginView> {
             h100,
             Padding(
               padding: const EdgeInsets.only(left: 30, right: 30),
-              child: Container(
-                height: 50,
-                width: size.width,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: secondaryColor),
-                    color: secondaryColor),
-                alignment: Alignment.center,
-                child: Text(
-                  "log in".toUpperCase(),
-                  style:
-                      primaryFont.copyWith(color: Colors.white, fontSize: 17),
+              child: InkWell(
+                onTap: () {
+                  Get.to(() => HomePageWithNavigation());
+                },
+                child: Container(
+                  height: 50,
+                  width: size.width,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: secondaryColor),
+                      color: secondaryColor),
+                  alignment: Alignment.center,
+                  child: Text(
+                    "log in".toUpperCase(),
+                    style:
+                        primaryFont.copyWith(color: Colors.white, fontSize: 17),
+                  ),
                 ),
               ),
             ),
