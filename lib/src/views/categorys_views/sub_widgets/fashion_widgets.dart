@@ -84,40 +84,49 @@ class _FashionWidgetState extends State<FashionWidget> {
                     ],
                   ),
                 ),
-                Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            "Women's Wear",
-                            style: primaryFont.copyWith(
-                                color: Colors.black54, fontSize: 15),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 8),
-                          child: Container(
-                            height: 22,
-                            width: 22,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                color: Colors.grey.withOpacity(0.5)),
-                            child: const Icon(
-                              Icons.arrow_forward_ios,
-                              size: 13,
+                InkWell(
+                  onTap: (){
+                       Get.to(ProductListView(
+                      title: "Women's Wear",
+                      productList:
+                          Get.find<HomeController>().paryaerProductList,
+                    ));
+                  },
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              "Women's Wear",
+                              style: primaryFont.copyWith(
+                                  color: Colors.black54, fontSize: 15),
                             ),
                           ),
-                        )
-                      ],
-                    ),
-                    Container(
-                      height: 0.5,
-                      color: Colors.grey.withOpacity(0.5),
-                    )
-                  ],
+                          Padding(
+                            padding: const EdgeInsets.only(right: 8),
+                            child: Container(
+                              height: 22,
+                              width: 22,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Colors.grey.withOpacity(0.5)),
+                              child: const Icon(
+                                Icons.arrow_forward_ios,
+                                size: 13,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      Container(
+                        height: 0.5,
+                        color: Colors.grey.withOpacity(0.5),
+                      )
+                    ],
+                  ),
                 ),
                 Column(
                   children: [

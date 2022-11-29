@@ -1,5 +1,6 @@
 import 'package:aladdin/src/controllers/all_category_controller.dart';
 import 'package:aladdin/src/controllers/home_controller.dart';
+import 'package:aladdin/src/controllers/products_info_controller.dart';
 import 'package:aladdin/src/controllers/register_controller.dart';
 import 'package:aladdin/src/views/landing_views/splash_view.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +10,7 @@ void main() {
   Get.put(RegisterController());
   Get.put(HomeController());
   Get.put(AllCategoryController());
+  Get.put(ProductInfoController());
   runApp(const MyApp());
 }
 

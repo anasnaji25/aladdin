@@ -200,4 +200,76 @@ class HomeController extends GetxController {
         price: "41.00",
         rating: "4.5"),
   ];
+
+  List<HomePorductmodel> newArrivalsList = [
+    HomePorductmodel(
+        name: "Aichan",
+        image: "assets/images/new_arrivals (1).png",
+        subtitle: "Gardening Tools, Household,",
+        price: "32.00",
+        rating: "4.5"),
+    HomePorductmodel(
+        name: "ELIANWARE 500/1000ml Water Spr",
+        image: "assets/images/new_arrivals (2).png",
+        subtitle: "Gardening Tools, Household,",
+        price: "23.00",
+        rating: "4.5"),
+    HomePorductmodel(
+        name: "INPLUS 8/9/11 Inch Plastic Squ",
+        image: "assets/images/new_arrivals (3).png",
+        subtitle: "Gardening Tools, Household,",
+        price: "52.00",
+        rating: "4.5"),
+    HomePorductmodel(
+        name: "ELIANWARE 500/1000ml Water Spr",
+        image: "assets/images/new_arrivals (4).png",
+        subtitle: "Gardening Tools, Household,",
+        price: "45.00",
+        rating: "4.5"),
+    HomePorductmodel(
+        name: "INPLUS 8/9/11 Inch Plastic Squ",
+        image: "assets/images/new_arrivals (5).png",
+        subtitle: "Gardening Tools, Household,",
+        price: "38.00",
+        rating: "4.5"),
+  ];
+
+  List<HomePorductmodel> bestSellingList = [
+    HomePorductmodel(
+        name: "PAMA Instant Hot & Spicy",
+        image: "assets/images/best_selling (1).png",
+        subtitle: "Food & Beverages",
+        price: "5.00",
+        rating: "4.5"),
+    HomePorductmodel(
+        name: "PAMA Instant Tang Hoon Clear S",
+        image: "assets/images/best_selling (2).png",
+        subtitle: "Water & Dairy",
+        price: "6.99",
+        rating: "4.5"),
+    HomePorductmodel(
+        name: "Superfood Hand Cream",
+        image: "assets/images/best_selling (3).png",
+        subtitle: "Hand Care",
+        price: "13.99",
+        rating: "4.5"),
+    HomePorductmodel(
+        name: "Natural Deodorant For Sensitiv",
+        image: "assets/images/best_selling (4).png",
+        subtitle: "Hand Care",
+        price: "4.99",
+        rating: "4.5"),
+    HomePorductmodel(
+        name: "PAMA Instant Hot & Spicy",
+        image: "assets/images/best_selling (5).png",
+        subtitle: "Food & Beverages",
+        price: "5.00",
+        rating: "4.5"),
+    HomePorductmodel(
+        name: "PAMA Instant Tang Hoon",
+        image: "assets/images/best_selling (6).png",
+        subtitle: "Water & Dairy",
+        price: "6.99",
+        rating: "4.5"),
+  ];
 }

@@ -17,6 +17,88 @@ class ProductListView extends StatefulWidget {
 }
 
 class _ProductListViewState extends State<ProductListView> {
+  Widget _offsetPopup() => PopupMenuButton<int>(
+      itemBuilder: (context) => [
+            const PopupMenuItem(
+              value: 1,
+              child: Text("Default Sorting"),
+            ),
+            const PopupMenuItem(
+              value: 2,
+              child: Text("Sort by average rating"),
+            ),
+            const PopupMenuItem(
+              value: 3,
+              child: Text("Sort by latest"),
+            ),
+            const PopupMenuItem(
+              value: 4,
+              child: Text("Sort by price: low to high"),
+            ),
+            const PopupMenuItem(
+              value: 5,
+              child: Text("Sort by price: high to low"),
+            ),
+          ],
+      icon: Container(
+        height: 40,
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(7),
+            boxShadow: [
+              BoxShadow(blurRadius: 2, color: Colors.grey.withOpacity(0.5))
+            ]),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 10, right: 10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Sort by latest",
+                style: primaryFont.copyWith(fontSize: 15),
+              ),
+              const Icon(Icons.unfold_more)
+            ],
+          ),
+        ),
+      ),
+      offset: Offset(10, 50));
+
+  Widget _offsetRightPopup() => PopupMenuButton<int>(
+      itemBuilder: (context) => [
+            const PopupMenuItem(
+              value: 1,
+              child: Text("Show 16"),
+            ),
+            const PopupMenuItem(
+              value: 2,
+              child: Text("Show all"),
+            ),
+          ],
+      icon: Container(
+        height: 40,
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(7),
+            boxShadow: [
+              BoxShadow(blurRadius: 2, color: Colors.grey.withOpacity(0.5))
+            ]),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 10, right: 10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Show 16",
+                style: primaryFont.copyWith(fontSize: 15),
+              ),
+              const Icon(Icons.unfold_more)
+            ],
+          ),
+        ),
+      ),
+      offset: const Offset(0, 50));
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -71,64 +153,14 @@ class _ProductListViewState extends State<ProductListView> {
                           flex: 3,
                           child: Padding(
                             padding: const EdgeInsets.all(10.0),
-                            child: Container(
-                              height: 40,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(7),
-                                  boxShadow: [
-                                    BoxShadow(
-                                        blurRadius: 2,
-                                        color: Colors.grey.withOpacity(0.5))
-                                  ]),
-                              child: Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 10, right: 10),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "Sort by latest",
-                                      style: primaryFont.copyWith(fontSize: 15),
-                                    ),
-                                    Icon(Icons.unfold_more)
-                                  ],
-                                ),
-                              ),
-                            ),
+                            child: _offsetPopup(),
                           ),
                         ),
                         Expanded(
                           flex: 2,
                           child: Padding(
                             padding: const EdgeInsets.all(10.0),
-                            child: Container(
-                              height: 40,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(7),
-                                  boxShadow: [
-                                    BoxShadow(
-                                        blurRadius: 2,
-                                        color: Colors.grey.withOpacity(0.5))
-                                  ]),
-                              child: Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 10, right: 10),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "Show 16",
-                                      style: primaryFont.copyWith(fontSize: 15),
-                                    ),
-                                    Icon(Icons.unfold_more)
-                                  ],
-                                ),
-                              ),
-                            ),
+                            child: _offsetRightPopup(),
                           ),
                         )
                       ],
@@ -152,7 +184,9 @@ class _ProductListViewState extends State<ProductListView> {
                                 left: 15, right: 15, bottom: 15),
                             child: InkWell(
                               onTap: () {
-                                Get.to(() => ProductDetailsView());
+                                Get.to(() => ProductDetailsView(
+                                      productmodel: widget.productList[index],
+                                    ));
                               },
                               child: Container(
                                 height: 200,

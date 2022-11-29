@@ -2,16 +2,19 @@ import 'package:aladdin/src/constants/app_colors.dart';
 import 'package:aladdin/src/constants/app_font.dart';
 import 'package:aladdin/src/constants/helpers.dart';
 import 'package:aladdin/src/controllers/all_category_controller.dart';
+import 'package:aladdin/src/controllers/home_controller.dart';
 import 'package:aladdin/src/views/categorys_views/sub_widgets/fashion_widgets.dart';
 import 'package:aladdin/src/views/categorys_views/sub_widgets/food_beverage.dart';
 import 'package:aladdin/src/views/categorys_views/sub_widgets/health_beauty_widgets.dart';
 import 'package:aladdin/src/views/categorys_views/sub_widgets/life_style_widget.dart';
+import 'package:aladdin/src/views/product_view/product_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class ALLCategoryViews extends StatefulWidget {
-  const ALLCategoryViews({super.key});
+  int index;
+  ALLCategoryViews({super.key, this.index = 0});
 
   @override
   State<ALLCategoryViews> createState() => _ALLCategoryViewsState();
@@ -19,6 +22,12 @@ class ALLCategoryViews extends StatefulWidget {
 
 class _ALLCategoryViewsState extends State<ALLCategoryViews> {
   final allCaregoryController = Get.find<AllCategoryController>();
+
+  @override
+  void initState() {
+    super.initState();
+    allCaregoryController.categoryindex(widget.index);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -299,8 +308,12 @@ class _ALLCategoryViewsState extends State<ALLCategoryViews> {
                                     children: [
                                       GestureDetector(
                                         onTap: () {
-                                          allCaregoryController
-                                              .categoryindex(4);
+                                          Get.to(ProductListView(
+                                            title: "New Arrivals",
+                                            productList:
+                                                Get.find<HomeController>()
+                                                    .newArrivalsList,
+                                          ));
                                         },
                                         child: Container(
                                           height: 60,
@@ -353,8 +366,12 @@ class _ALLCategoryViewsState extends State<ALLCategoryViews> {
                                     children: [
                                       GestureDetector(
                                         onTap: () {
-                                          allCaregoryController
-                                              .categoryindex(5);
+                                          Get.to(ProductListView(
+                                            title: "Best Selling",
+                                            productList:
+                                                Get.find<HomeController>()
+                                                    .bestSellingList,
+                                          ));
                                         },
                                         child: Container(
                                           height: 60,
@@ -407,8 +424,8 @@ class _ALLCategoryViewsState extends State<ALLCategoryViews> {
                                     children: [
                                       GestureDetector(
                                         onTap: () {
-                                          allCaregoryController
-                                              .categoryindex(6);
+                                          // allCaregoryController
+                                          //     .categoryindex(6);
                                         },
                                         child: Container(
                                           height: 60,

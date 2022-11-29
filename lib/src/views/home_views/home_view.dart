@@ -44,74 +44,95 @@ class _HomeViewState extends State<HomeView> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Container(
-                      height: 125,
-                      child: Stack(
-                        children: [
-                          SvgPicture.asset(
-                            "assets/icons/svgicons/fashion.svg",
-                            height: 97,
-                            width: 97,
-                            fit: BoxFit.cover,
-                          ),
-                          Positioned(
-                            bottom: 24,
-                            left: 25,
-                            child: Text(
-                              "Fashion",
-                              style: primaryFont.copyWith(
-                                fontSize: 13,
-                              ),
-                            ),
-                          )
-                        ],
-                      )),
-                  Container(
-                      height: 125,
-                      child: Stack(
-                        children: [
-                        SvgPicture.asset(
-                            "assets/icons/svgicons/health_beauty.svg",
-                            height: 97,
-                            width: 97,
-                            fit: BoxFit.cover,
-                          ),
-                          Positioned(
-                            bottom: 4,
-                            left: 25,
-                            child: Text(
-                              "Health\nBeauty",
-                              textAlign: TextAlign.center,
-                              style: primaryFont.copyWith(
-                                fontSize: 13,
-                              ),
-                            ),
-                          )
-                        ],
-                      )),
-                  Container(
-                      height: 125,
-                      child: Stack(
-                        children: [
+                  InkWell(
+                    onTap: () {
+                      Get.to(() => ALLCategoryViews(
+                            index: 0,
+                          ));
+                    },
+                    child: Container(
+                        height: 125,
+                        child: Stack(
+                          children: [
                             SvgPicture.asset(
-                            "assets/icons/svgicons/food_beverage.svg",
-                            height: 97,
-                            width: 97,
-                            fit: BoxFit.cover,
-                          ),
-                          Positioned(
-                            bottom: 4,
-                            left: 15,
-                            child: Text(
-                              "Food\nBeverages",
-                              textAlign: TextAlign.center,
-                              style: primaryFont.copyWith(
-                                fontSize: 13,
-                              ),
+                              "assets/icons/svgicons/fashion.svg",
+                              height: 97,
+                              width: 97,
+                              fit: BoxFit.cover,
                             ),
-                          )
-                        ],
-                      )),
+                            Positioned(
+                              bottom: 24,
+                              left: 25,
+                              child: Text(
+                                "Fashion",
+                                style: primaryFont.copyWith(
+                                  fontSize: 13,
+                                ),
+                              ),
+                            )
+                          ],
+                        )),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Get.to(() => ALLCategoryViews(
+                            index: 1,
+                          ));
+                    },
+                    child: Container(
+                        height: 125,
+                        child: Stack(
+                          children: [
+                            SvgPicture.asset(
+                              "assets/icons/svgicons/health_beauty.svg",
+                              height: 97,
+                              width: 97,
+                              fit: BoxFit.cover,
+                            ),
+                            Positioned(
+                              bottom: 4,
+                              left: 25,
+                              child: Text(
+                                "Health\nBeauty",
+                                textAlign: TextAlign.center,
+                                style: primaryFont.copyWith(
+                                  fontSize: 13,
+                                ),
+                              ),
+                            )
+                          ],
+                        )),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Get.to(() => ALLCategoryViews(
+                            index: 2,
+                          ));
+                    },
+                    child: Container(
+                        height: 125,
+                        child: Stack(
+                          children: [
+                            SvgPicture.asset(
+                              "assets/icons/svgicons/food_beverage.svg",
+                              height: 97,
+                              width: 97,
+                              fit: BoxFit.cover,
+                            ),
+                            Positioned(
+                              bottom: 4,
+                              left: 15,
+                              child: Text(
+                                "Food\nBeverages",
+                                textAlign: TextAlign.center,
+                                style: primaryFont.copyWith(
+                                  fontSize: 13,
+                                ),
+                              ),
+                            )
+                          ],
+                        )),
+                  ),
                   InkWell(
                     onTap: () {
                       Get.to(() => ALLCategoryViews());
