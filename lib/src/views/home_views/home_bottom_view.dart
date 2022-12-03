@@ -1,6 +1,8 @@
 import 'package:aladdin/src/constants/app_colors.dart';
 import 'package:aladdin/src/views/cart_view/cart_view.dart';
 import 'package:aladdin/src/views/home_views/home_view.dart';
+import 'package:aladdin/src/views/more_views/more_view.dart';
+import 'package:aladdin/src/views/profile_views/profile_view.dart';
 import 'package:aladdin/src/views/search_view/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -26,8 +28,8 @@ class _HomePageWithNavigationState extends State<HomePageWithNavigation> {
     HomeView(),
     SearchView(),
     CartView(),
-    HomeView(),
-    HomeView(),
+    ProfileView(),
+    MoreView(),
   ];
 
   void _onItemTapped(int index) async {

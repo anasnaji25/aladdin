@@ -1,3 +1,4 @@
+import 'package:aladdin/src/controllers/address_controller.dart';
 import 'package:aladdin/src/controllers/all_category_controller.dart';
 import 'package:aladdin/src/controllers/home_controller.dart';
 import 'package:aladdin/src/controllers/products_info_controller.dart';
@@ -11,6 +12,7 @@ void main() {
   Get.put(HomeController());
   Get.put(AllCategoryController());
   Get.put(ProductInfoController());
+  Get.put(AddressController());
   runApp(const MyApp());
 }
 

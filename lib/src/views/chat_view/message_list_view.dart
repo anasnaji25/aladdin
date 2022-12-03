@@ -2,6 +2,7 @@ import 'package:aladdin/src/constants/app_colors.dart';
 import 'package:aladdin/src/constants/app_font.dart';
 import 'package:aladdin/src/constants/helpers.dart';
 import 'package:aladdin/src/controllers/home_controller.dart';
+import 'package:aladdin/src/views/chat_view/chat_screen_view.dart';
 import 'package:aladdin/src/views/product_view/product_details_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -68,20 +69,25 @@ class _MessageListViewState extends State<MessageListView> {
                         color: Colors.black54),
                   ),
                   actions: [
-                    Container(
-                      height: 45,
-                      width: 45,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          boxShadow: [
-                            BoxShadow(
-                                blurRadius: 2,
-                                color: Colors.grey.withOpacity(0.2))
-                          ],
-                          color: Colors.white),
-                      child: const Icon(
-                        Icons.arrow_back,
-                        color: Colors.black54,
+                    InkWell(
+                      onTap: () {
+                        Get.back();
+                      },
+                      child: Container(
+                        height: 45,
+                        width: 45,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            boxShadow: [
+                              BoxShadow(
+                                  blurRadius: 2,
+                                  color: Colors.grey.withOpacity(0.2))
+                            ],
+                            color: Colors.white),
+                        child: const Icon(
+                          Icons.arrow_back,
+                          color: Colors.black54,
+                        ),
                       ),
                     )
                   ],
@@ -113,78 +119,82 @@ class _MessageListViewState extends State<MessageListView> {
           ),
           body: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 15,right: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Container(
-                          height: 65,
-                          width: 65,
-                          decoration: BoxDecoration(
-                              color: Colors.green.withOpacity(0.5),
-                              borderRadius: BorderRadius.circular(40)),
-                          alignment: Alignment.center,
-                          child: Text(
-                            "SS",
-                            style: primaryFont.copyWith(
-                                color: Colors.green.withOpacity(0.7),
-                                fontSize: 20),
-                          ),
-                        ),
-                        w10,
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Smiley's Store",
+              InkWell(
+                onTap: () {
+                  Get.to(() => ChatScreenView());
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 15, right: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            height: 65,
+                            width: 65,
+                            decoration: BoxDecoration(
+                                color: Colors.green.withOpacity(0.5),
+                                borderRadius: BorderRadius.circular(40)),
+                            alignment: Alignment.center,
+                            child: Text(
+                              "SS",
                               style: primaryFont.copyWith(
-                                  color: Colors.black,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w600),
+                                  color: Colors.green.withOpacity(0.7),
+                                  fontSize: 20),
                             ),
-                            Text(
-                              """Lorem ipsum dolor sit amet,
-consectetur adipiscing elit, sed""",
-                              style: primaryFont.copyWith(
-                                  color: Colors.black45, fontSize: 12),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "9:23 AM",
-                          style: primaryFont.copyWith(color: Colors.grey),
-                        ),
-                        h20,
-                        Container(
-                          height: 15,
-                          width: 15,
-                          decoration: BoxDecoration(
-                              color: Colors.red,
-                              borderRadius: BorderRadius.circular(20)),
-                          alignment: Alignment.center,
-                          child: Text(
-                            "5",
-                            style: primaryFont.copyWith(
-                                color: Colors.white, fontSize: 11),
                           ),
-                        )
-                      ],
-                    )
-                  ],
+                          w10,
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Smiley's Store",
+                                style: primaryFont.copyWith(
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                              Text(
+                                """Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit, sed""",
+                                style: primaryFont.copyWith(
+                                    color: Colors.black45, fontSize: 12),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "9:23 AM",
+                            style: primaryFont.copyWith(color: Colors.grey),
+                          ),
+                          h20,
+                          Container(
+                            height: 15,
+                            width: 15,
+                            decoration: BoxDecoration(
+                                color: Colors.red,
+                                borderRadius: BorderRadius.circular(20)),
+                            alignment: Alignment.center,
+                            child: Text(
+                              "5",
+                              style: primaryFont.copyWith(
+                                  color: Colors.white, fontSize: 11),
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               ),
               Divider(),
               Padding(
-                padding: const EdgeInsets.only(left: 15,right: 10),
+                padding: const EdgeInsets.only(left: 15, right: 10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,

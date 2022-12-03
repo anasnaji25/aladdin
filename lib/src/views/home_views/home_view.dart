@@ -4,6 +4,7 @@ import 'package:aladdin/src/constants/helpers.dart';
 import 'package:aladdin/src/controllers/home_controller.dart';
 import 'package:aladdin/src/views/categorys_views/category_view.dart';
 import 'package:aladdin/src/views/chat_view/message_list_view.dart';
+import 'package:aladdin/src/views/notification_settings_views/notifications_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -44,8 +45,8 @@ class _HomeViewState extends State<HomeView> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         InkWell(
-                          onTap: (){
-                            Get.to(()=> MessageListView());
+                          onTap: () {
+                            Get.to(() => MessageListView());
                           },
                           child: Container(
                               height: 35,
@@ -62,8 +63,10 @@ class _HomeViewState extends State<HomeView> {
                                       height: 23,
                                       width: 23,
                                       child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
                                         children: [
                                           Image.asset(
                                             "assets/icons/Messages.png",
@@ -74,73 +77,80 @@ class _HomeViewState extends State<HomeView> {
                                       ),
                                     ),
                                   ),
-                            Positioned(
+                                  Positioned(
                                     bottom: 9,
                                     left: 9,
                                     child: Container(
                                       height: 13,
                                       width: 13,
                                       decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(20),
+                                          borderRadius:
+                                              BorderRadius.circular(20),
                                           color: Colors.green),
-                                          alignment: Alignment.center,
-                                          child: Text("5",style: primaryFont.copyWith(
-                                            color: Colors.white,
-                                            fontSize: 8
-                                          ),),
+                                      alignment: Alignment.center,
+                                      child: Text(
+                                        "5",
+                                        style: primaryFont.copyWith(
+                                            color: Colors.white, fontSize: 8),
+                                      ),
                                     ),
                                   ),
-                        
                                 ],
                               )),
                         ),
-                        Container(
-                            height: 35,
-                            width: 50,
-                            child: Stack(
-                              alignment: Alignment.center,
-                              children: [
-                                Positioned(
-                                  bottom: 5,
-                                  top: 0,
-                                  right: 0,
-                                  left: 0,
-                                  child: SizedBox(
-                                    height: 23,
-                                    width: 23,
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Image.asset(
-                                          "assets/icons/notifications.png",
-                                          height: 21,
-                                        ),
-                                      ],
+                        InkWell(
+                          onTap: () {
+                            Get.to(() => NotificationView());
+                          },
+                          child: Container(
+                              height: 35,
+                              width: 50,
+                              child: Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  Positioned(
+                                    bottom: 5,
+                                    top: 0,
+                                    right: 0,
+                                    left: 0,
+                                    child: SizedBox(
+                                      height: 23,
+                                      width: 23,
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          Image.asset(
+                                            "assets/icons/notifications.png",
+                                            height: 21,
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
-                                ),
-                                Positioned(
-                                  bottom: 9,
-                                  left: 9,
-                                  child: Container(
-                                    height: 13,
-                                    width: 13,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(20),
-                                        color: Colors.green),
-                                     alignment: Alignment.center,
-                                    child: Text(
-                                      "4",
-                                      style: primaryFont.copyWith(
-                                          color: Colors.white, fontSize: 8),
+                                  Positioned(
+                                    bottom: 9,
+                                    left: 9,
+                                    child: Container(
+                                      height: 13,
+                                      width: 13,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          color: Colors.green),
+                                      alignment: Alignment.center,
+                                      child: Text(
+                                        "4",
+                                        style: primaryFont.copyWith(
+                                            color: Colors.white, fontSize: 8),
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ],
-                            )),
+                                ],
+                              )),
+                        ),
                         w20
                       ],
                     )
