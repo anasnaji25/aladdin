@@ -1,5 +1,7 @@
 import 'package:aladdin/src/constants/app_colors.dart';
+import 'package:aladdin/src/views/cart_view/cart_view.dart';
 import 'package:aladdin/src/views/home_views/home_view.dart';
+import 'package:aladdin/src/views/search_view/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,8 +24,8 @@ class _HomePageWithNavigationState extends State<HomePageWithNavigation> {
 
   List pages = [
     HomeView(),
-    HomeView(),
-    HomeView(),
+    SearchView(),
+    CartView(),
     HomeView(),
     HomeView(),
   ];
